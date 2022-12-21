@@ -12,13 +12,15 @@ from dns.aliyun import AliApi
 from dns.huawei import HuaWeiApi
 
 #可以从https://shop.hostmonit.com获取
-KEY = os.environ["KEY"]  #"o1zrmHAF"
+KEY = "o1zrmHAF"  #"o1zrmHAF"
 #CM:移动 CU:联通 CT:电信 AB:境外 DEF:默认
 #修改需要更改的dnspod域名和子域名
-DOMAINS = json.loads(os.environ["DOMAINS"])  #{"hostmonit.com": {"@": ["CM","CU","CT"], "shop": ["CM", "CU", "CT"], "stock": ["CM","CU","CT"]},"4096.me": {"@": ["CM","CU","CT"], "vv": ["CM","CU","CT"]}}
+DOMAINS = {
+    "dontgodie.ml": {"@": ["CM","CU","CT"], "hk": ["CM", "CU", "CT"]}
+}
 #腾讯云后台获取 https://console.cloud.tencent.com/cam/capi
-SECRETID = os.environ["SECRETID"]    #'AKIDV**********Hfo8CzfjgN'
-SECRETKEY = os.environ["SECRETKEY"]   #'ZrVs*************gqjOp1zVl'
+SECRETID = "AKID88wWr1xemiSxDG7Wr01rSnOp35sTs52v"    #'AKIDV**********Hfo8CzfjgN'
+SECRETKEY = "lfNsBVdbMteBYjiW7WwIVZZR5WkneFak"   #'ZrVs*************gqjOp1zVl'
 #默认为普通版本 不用修改
 AFFECT_NUM = 2
 #DNS服务商 如果使用DNSPod改为1 如果使用阿里云解析改成2  如果使用华为云解析改成3
