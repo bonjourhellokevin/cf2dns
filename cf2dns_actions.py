@@ -15,7 +15,9 @@ from dns.huawei import HuaWeiApi
 KEY = "o1zrmHAF"  #"o1zrmHAF"
 #CM:移动 CU:联通 CT:电信 AB:境外 DEF:默认
 #修改需要更改的dnspod域名和子域名
-DOMAINS = json.loads(os.environ["DOMAINS"])
+DOMAINS = {
+    "dontgodie.ml": {"hk": ["CM","CU","CT","AB"]}
+}
 #腾讯云后台获取 https://console.cloud.tencent.com/cam/capi
 SECRETID = os.environ["SECRETID"]    #'AKIDV**********Hfo8CzfjgN'
 SECRETKEY = os.environ["SECRETKEY"]   #'ZrVs*************gqjOp1zVl'
