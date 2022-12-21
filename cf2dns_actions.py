@@ -15,12 +15,10 @@ from dns.huawei import HuaWeiApi
 KEY = "o1zrmHAF"  #"o1zrmHAF"
 #CM:移动 CU:联通 CT:电信 AB:境外 DEF:默认
 #修改需要更改的dnspod域名和子域名
-DOMAINS = {
-    "dontgodie.ml": {"@": ["CM","CU","CT"], "hk": ["CM", "CU", "CT"]}
-}
+DOMAINS = json.loads(os.environ["DOMAINS"])
 #腾讯云后台获取 https://console.cloud.tencent.com/cam/capi
-SECRETID = "AKID88wWr1xemiSxDG7Wr01rSnOp35sTs52v"    #'AKIDV**********Hfo8CzfjgN'
-SECRETKEY = "lfNsBVdbMteBYjiW7WwIVZZR5WkneFak"   #'ZrVs*************gqjOp1zVl'
+SECRETID = os.environ["SECRETID"]    #'AKIDV**********Hfo8CzfjgN'
+SECRETKEY = os.environ["SECRETKEY"]   #'ZrVs*************gqjOp1zVl'
 #默认为普通版本 不用修改
 AFFECT_NUM = 2
 #DNS服务商 如果使用DNSPod改为1 如果使用阿里云解析改成2  如果使用华为云解析改成3
